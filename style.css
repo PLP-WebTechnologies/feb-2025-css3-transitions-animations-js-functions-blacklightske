@@ -1,0 +1,119 @@
+/* Base Styles */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding: 2rem;
+  background-color: white;
+  color: #333;
+  transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+body.dark {
+  background-color: #121212;
+  color: #f1f1f1;
+}
+
+header, footer {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+/* Header fade-in */
+header {
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+/* Button pulse on hover */
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  background-color: #2196f3;
+  color: white;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #0b7dda;
+  animation: pulse 0.5s infinite alternate;
+}
+
+/* Animated box */
+.box {
+  width: 100px;
+  height: 100px;
+  background-color: #4caf50;
+  margin: 2rem auto;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: bold;
+  transition: transform 0.4s ease-in-out;
+}
+
+.box.animate {
+  animation: bounce 1s ease;
+}
+
+/* Content sections fade in and slide */
+.content-section {
+  max-width: 700px;
+  margin: 2rem auto;
+  text-align: center;
+  padding: 1rem;
+  background: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  animation: fadeSlideIn 1s ease both;
+}
+
+body.dark .content-section {
+  background: #1e1e1e;
+  box-shadow: 0 2px 8px rgba(255,255,255,0.05);
+}
+
+/* Footer floating animation */
+footer p {
+  animation: float 2s ease-in-out infinite alternate;
+}
+
+/* Image zoom on hover */
+img {
+  max-width: 100%;
+  transition: transform 0.3s ease;
+  border-radius: 8px;
+}
+
+img:hover {
+  transform: scale(1.05);
+}
+
+/* Keyframes */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes bounce {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-50px); }
+  100% { transform: translateY(0); }
+}
+
+@keyframes pulse {
+  from { transform: scale(1); }
+  to { transform: scale(1.05); }
+}
+
+@keyframes fadeSlideIn {
+  from { opacity: 0; transform: translateX(-50px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes float {
+  from { transform: translateY(0); }
+  to { transform: translateY(-10px); }
+}
